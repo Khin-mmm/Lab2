@@ -37,13 +37,23 @@ def find_min_max(list):
             max = list[x]
         x += 1
     min_max_list = [int(min),int(max)]
-    return min_max_list;
+    return min_max_list
 
-def sort_temperature():
+def sort_temperature(list):
     print("sort_temperature")
+    sortedList = sorted(list)
+    return sortedList
 
-def calc_median_temperature():
+def calc_median_temperature(list):
     print("calc_madian_temperarture")
+    median = 0
+    num = len(list)
+    x = int(num / 2)
+    if num % 2 == 0:
+        median = (list[x] + list[x-1])/2
+    else:
+        median = list[x]
+    return median
 
 display_main_menu()
 f_list = get_user_input()
@@ -53,3 +63,9 @@ print(average)
 
 min_max = find_min_max(f_list)
 print(min_max)
+
+s_list = sort_temperature(f_list)
+print(s_list)
+
+median_temp = calc_median_temperature(s_list)
+print(median_temp)
